@@ -2,7 +2,7 @@
 
 # FlUnit
 
-[![NuGet version (FlUnit)](https://img.shields.io/nuget/v/FlUnit.svg?style=flat-square)](https://www.nuget.org/packages/FlUnit/) [![NuGet downloads (FlUnit)](https://img.shields.io/nuget/dt/FlUnit.svg?style=flat-square)](https://www.nuget.org/packages/FlUnit/)
+[![NuGet version (FlUnit.Abstractions)](https://img.shields.io/nuget/v/FlUnit.Abstractions.svg?style=flat-square)](https://www.nuget.org/packages/FlUnit.Abstractions/) [![NuGet downloads (FlUnit.Abstractions)](https://img.shields.io/nuget/dt/FlUnit.Abstractions.svg?style=flat-square)](https://www.nuget.org/packages/FlUnit.Abstractions/)
 
 This package contains abstractions shared between the core FlUnit library and test platform adapters.
 FlUnit is a test framework in which tests are written using [builders](https://en.wikipedia.org/wiki/Builder_pattern) that expose a [fluent interface](https://en.wikipedia.org/wiki/Fluent_interface), like this:
