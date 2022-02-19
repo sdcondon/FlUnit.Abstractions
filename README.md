@@ -1,6 +1,6 @@
 ﻿![FlUnit Logo](src/FlUnitIcon.png)
 
-# FlUnit
+# FlUnit.Abstractions
 
 [![NuGet version (FlUnit.Abstractions)](https://img.shields.io/nuget/v/FlUnit.Abstractions.svg?style=flat-square)](https://www.nuget.org/packages/FlUnit.Abstractions/) [![NuGet downloads (FlUnit.Abstractions)](https://img.shields.io/nuget/dt/FlUnit.Abstractions.svg?style=flat-square)](https://www.nuget.org/packages/FlUnit.Abstractions/)
 
