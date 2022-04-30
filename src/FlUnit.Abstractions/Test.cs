@@ -6,10 +6,9 @@ namespace FlUnit
 {
     /// <summary>
     /// Abstraction for types representing a runnable test.
-    /// </summary>
-    /// <remarks>
+    /// <para/>
     /// NB: This is an abstract class rather than an interface to facilitate implicit conversions from builders.
-    /// </remarks>
+    /// </summary>
     public abstract class Test : IDisposable
     {
         /// <summary>
@@ -18,13 +17,14 @@ namespace FlUnit
         public abstract IReadOnlyCollection<ITestCase> Cases { get; }
 
         /// <summary>
-        /// Gets a value indicating whether this test has any configuration overrides to apply.
+        /// Gets a value indicating whether this test has any configuration overrides to apply (thus informing the
+        /// test runner that it needs to create a copy of the configuration object).
         /// </summary>
         /// <remarks>
         /// NB: While we *could* support configuration overrides with a single method - it'd require either a configuration implementation
-        /// in the FlUnit library (which isn't ideal - configuration is an execution concern) so that it can be cloned, or would require
+        /// in the FlUnit library (which isn't ideal - configuration is an execution concern) so that it can be copied, or would require
         /// configuration as a struct (which definitely isn't ideal). So we have a separate property instead, so that the execution logic
-        /// can determine whether it needs to clone the configuration or not..
+        /// can determine whether it needs to clone the configuration or not.
         /// </remarks>
         public abstract bool HasConfigurationOverrides { get; }
 
@@ -37,7 +37,8 @@ namespace FlUnit
         /// <summary>
         /// Arranges the test - populating the <see cref="Cases"/> property.
         /// </summary>
-        public abstract void Arrange();
+        /// <param name="context">The test context.</param>
+        public abstract void Arrange(ITestContext context);
 
         /// <inheritdoc/>
         public abstract void Dispose();
