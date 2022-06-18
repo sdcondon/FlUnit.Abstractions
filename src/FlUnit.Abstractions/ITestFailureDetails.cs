@@ -5,12 +5,11 @@ namespace FlUnit
     /// <summary>
     /// Interface for <see cref="Exception"/> classes thrown by <see cref="Test"/> instances to
     /// implement to communicate error details to the test runner.
-    /// </summary>
-    /// <remarks>
+    /// <para/>
     /// Platform adapters should handle *any* thrown exception by recording a test failure result,
     /// but implementing this interface gives test implementations fine control over the error
     /// message and stack trace included in the result.
-    /// </remarks>
+    /// </summary>
     public interface ITestFailureDetails
     {
         /// <summary>

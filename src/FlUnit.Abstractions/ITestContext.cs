@@ -7,15 +7,27 @@
     public interface ITestContext
     {
         /// <summary>
-        /// Appends some text to the standard output stream of the test context.
+        /// Appends some text to the output stream for the testt.
         /// </summary>
         /// <param name="output">The text to append.</param>
         void WriteOutput(string output);
 
         /// <summary>
-        /// Appends a line of text to the standard output stream of the test context.
+        /// Appends a line of text to the output stream of the test context.
         /// </summary>
         /// <param name="output">The text to append.</param>
         void WriteOutputLine(string output);
+
+        /// <summary>
+        /// Appends some text to the error stream of the test context.
+        /// </summary>
+        /// <param name="error">The text to append.</param>
+        void WriteError(string error);
+
+        /// <summary>
+        /// Appends a line of text to the error stream of the test context.
+        /// </summary>
+        /// <param name="error">The text to append.</param>
+        void WriteErrorLine(string error);
     }
 }
