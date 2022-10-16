@@ -9,6 +9,11 @@ namespace FlUnit
     public interface ITestCase : IFormattable
     {
         /// <summary>
+        /// Gets the test that this test case is part of.
+        /// </summary>
+        Test Test { get; }
+
+        /// <summary>
         /// Assertions that should all succeed (that is, not throw) once the <see cref="Act"/> method has been invoked.
         /// </summary>
         IReadOnlyCollection<ITestAssertion> Assertions { get; }
