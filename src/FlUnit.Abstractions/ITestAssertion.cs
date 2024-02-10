@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace FlUnit
 {
@@ -8,13 +9,12 @@ namespace FlUnit
     public interface ITestAssertion : IFormattable
     {
         /// <summary>
-        /// Gets the test case that this assertion is a part of.
-        /// </summary>
-        ITestCase TestCase { get; }
-
-        /// <summary>
         /// Tests the assertion. Failures should be indicated by thrown exceptions (ideally those implementing <see cref="ITestFailureDetails"/>).
         /// </summary>
-        void Assert();
+#if NET6_0_OR_GREATER
+        ValueTask AssertAsync();
+#else
+        Task AssertAsync();
+#endif
     }
 }

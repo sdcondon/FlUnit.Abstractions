@@ -1,6 +1,7 @@
 ﻿using FlUnit.Configuration;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FlUnit
 {
@@ -12,7 +13,7 @@ namespace FlUnit
     public abstract class Test : IDisposable
     {
         /// <summary>
-        /// Gets a collection of test cases that should be populated once <see cref="Arrange"/> is called.
+        /// Gets a collection of test cases that should be populated once <see cref="ArrangeAsync"/> is called.
         /// </summary>
         public abstract IReadOnlyCollection<ITestCase> Cases { get; }
 
@@ -38,7 +39,11 @@ namespace FlUnit
         /// Arranges the test - populating the <see cref="Cases"/> property.
         /// </summary>
         /// <param name="context">The test context.</param>
-        public abstract void Arrange(ITestContext context);
+#if NET6_0_OR_GREATER
+        public abstract ValueTask ArrangeAsync(ITestContext context);
+#else
+        public abstract Task ArrangeAsync(ITestContext context);
+#endif
 
         /// <inheritdoc/>
         public abstract void Dispose();
