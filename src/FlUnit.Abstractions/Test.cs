@@ -12,17 +12,10 @@ namespace FlUnit
     /// </summary>
     public abstract class Test : IDisposable
     {
-#if NET6_0_OR_GREATER
-        /// <summary>
-        /// Gets a collection of test cases that should be populated once <see cref="Arrange"/> is called.
-        /// </summary>
-        public abstract IAsyncEnumerable<ITestCase> Cases { get; }
-#else
         /// <summary>
         /// Gets a collection of test cases that should be populated once <see cref="ArrangeAsync"/> is called.
         /// </summary>
         public abstract IReadOnlyCollection<ITestCase> Cases { get; }
-#endif
 
         /// <summary>
         /// Gets a value indicating whether this test has any configuration overrides to apply (thus informing the
@@ -47,8 +40,10 @@ namespace FlUnit
         /// </summary>
         /// <param name="context">The test context.</param>
 #if NET6_0_OR_GREATER
-        public abstract void Arrange(ITestContext context);
+        /// <returns>A <see cref="ValueTask"/> representing the completion of the operation.</returns>
+        public abstract ValueTask ArrangeAsync(ITestContext context);
 #else
+        /// <returns>A <see cref="Task"/> representing the completion of the operation.</returns>
         public abstract Task ArrangeAsync(ITestContext context);
 #endif
 
