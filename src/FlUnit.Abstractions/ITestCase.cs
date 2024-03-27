@@ -14,13 +14,16 @@ namespace FlUnit
         /// </summary>
         IReadOnlyCollection<ITestAssertion> Assertions { get; }
 
+#if NET6_0_OR_GREATER
         /// <summary>
         /// Invokes the test action.
         /// </summary>
         /// <returns>A <see cref="ValueTask"/> representing the completion of the operation.</returns>
-#if NET6_0_OR_GREATER
         ValueTask ActAsync();
 #else
+        /// <summary>
+        /// Invokes the test action.
+        /// </summary>
         /// <returns>A <see cref="Task"/> representing the completion of the operation.</returns>
         Task ActAsync();
 #endif
