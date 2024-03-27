@@ -1,4 +1,6 @@
-﻿namespace FlUnit
+﻿using System.Threading;
+
+namespace FlUnit
 {
     /// <summary>
     /// Interface for types representing the context in which a test is running.
@@ -6,6 +8,11 @@
     /// </summary>
     public interface ITestContext
     {
+        /// <summary>
+        /// Gets the cancellation token for the test. Potentially long-running test clauses should respect this.
+        /// </summary>
+        CancellationToken TestCancellation { get; }
+
         /// <summary>
         /// Appends some text to the output stream for the testt.
         /// </summary>
