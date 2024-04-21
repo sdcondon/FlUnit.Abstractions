@@ -9,7 +9,13 @@ namespace FlUnit
 	public sealed class TraitAttribute : Attribute
 	{
         /// <summary>
-        /// Creates a new instance of the <see cref="TraitAttribute"/> class.
+        /// Initialises a new instance of the <see cref="TraitAttribute"/> class that has just a name.
+        /// </summary>
+        /// <param name="name">The name of the trait.</param>
+        public TraitAttribute(string name) => Name = name;
+
+        /// <summary>
+        /// Initialises a new instance of the <see cref="TraitAttribute"/> class that has both a name and a value.
         /// </summary>
         /// <param name="name">The name of the trait.</param>
         /// <param name="value">The value of the trait.</param>
@@ -21,8 +27,8 @@ namespace FlUnit
 		public string Name { get; }
 
         /// <summary>
-        /// Gets the value of the trait.
+        /// Gets the value of the trait, if any.
         /// </summary>
         public string Value { get; }
-	}
+    }
 }
