@@ -5,7 +5,7 @@
     <Product>FlUnit - A fluent unit test framework</Product>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/sdcondon/FlUnit.Abstractions.git</RepositoryUrl>
-    <PackageProjectUrl>https://github.com/sdcondon/FlUnit.Abstractions</PackageProjectUrl>
+    <PackageProjectUrl>https://sdcondon.net/FlUnit</PackageProjectUrl>
 	<PackageReleaseNotes>https://github.com/sdcondon/FlUnit.Abstractions/releases</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>2019-2024 Simon Condon</Copyright>
