@@ -35,21 +35,12 @@ namespace FlUnit
         /// <param name="testConfiguration">The test configuration object to apply the overrides to.</param>
         public abstract void ApplyConfigurationOverrides(ITestConfiguration testConfiguration);
 
-#if NET6_0_OR_GREATER
         /// <summary>
         /// Arranges the test - populating the <see cref="Cases"/> property.
         /// </summary>
         /// <param name="context">The test context.</param>
         /// <returns>A <see cref="ValueTask"/> representing the completion of the operation.</returns>
         public abstract ValueTask ArrangeAsync(ITestContext context);
-#else
-        /// <summary>
-        /// Arranges the test - populating the <see cref="Cases"/> property.
-        /// </summary>
-        /// <param name="context">The test context.</param>
-        /// <returns>A <see cref="Task"/> representing the completion of the operation.</returns>
-        public abstract Task ArrangeAsync(ITestContext context);
-#endif
 
         /// <inheritdoc/>
         public abstract void Dispose();
